@@ -15,7 +15,7 @@ function EventForm({ method, event }) {
 
   return (
     <Form method='post' className={classes.form}>
-      {data && data.errors && <ul>{Object.values(data.errors).map(err => <li key={err}>{err}</li>)}</ul>}
+      {data && data.errors && <ul><p>Please fix the following:</p>{Object.values(data.errors).map(err => <li key={err}>{err}</li>)}</ul>}
       <p>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title" required defaultValue={event ? event.title : ''}/>
