@@ -7,7 +7,7 @@ const ErrorPage = () => {
   const error = useRouteError();
 
   //Uncomment this log for Error clarity
-  //console.log('ERROR PAGE', error);
+  console.log('ERROR PAGE', error);
 
   let title = 'An Error Occurred';
   let message = 'Something went wrong here.';
