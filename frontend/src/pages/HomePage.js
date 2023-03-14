@@ -2,8 +2,12 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <h1>HomePage</h1>
+    <div className='homepage-div'>
+      <h1>HomePage</h1>
+      {/*Insert Featured Event Component*/}
+    </div>
   )
 }
 
 export default HomePage;
+
