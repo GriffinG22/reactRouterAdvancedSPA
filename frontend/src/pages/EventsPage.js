@@ -11,6 +11,9 @@ function EventsPage() {
   
   const events = data.events;
 
+  //Uncomment to check list of events being pulled in
+  //console.log(events);
+
   return (
       <EventsList events={events} />
   );
