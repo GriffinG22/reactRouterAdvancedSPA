@@ -8,13 +8,13 @@ const EventDetailPage = () => {
 
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<p style={{textAlign: 'center'}}>Loading...</p>}>
         <Await resolve={event}>
           {loadedEvent => <EventItem event={loadedEvent}/> }
           
         </Await>
       </Suspense>
-      <Suspense>
+      <Suspense fallback={<p style={{textAlign: 'center'}}>Loading...</p>}>
         <Await resolve={events}>
           {loadedEvents => <EventsList events={loadedEvents}/>}
         </Await>
@@ -51,7 +51,7 @@ export async function loader({request, params}) {
   const res = await fetch(`http://localhost:8080/events/${params.eventId}`);
 
   return defer({
-    event: loadEvent(params.eventId),
+    event: await loadEvent(params.eventId),
     events: loadEvents()
   })
 };
