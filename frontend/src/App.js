@@ -8,7 +8,7 @@ import EventDetailPage, {
 } from './pages/EventDetailPage';
 import EventsPage, { loader as eventsLoader } from './pages/EventsPage';
 import EventsRootLayout from './pages/EventLayout';
-import HomePage from './pages/HomePage';
+import HomePage, {loader as homeLoader} from './pages/HomePage';
 import NewEventPage from './pages/NewEventPage';
 import RootLayout from './pages/RootLayout';
 import { action as manipulateEventAction } from './components/EventForm';
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <HomePage /> },
+      { index: true, element: <HomePage />, loader: homeLoader },
       {
         path: 'events',
         element: <EventsRootLayout />,
